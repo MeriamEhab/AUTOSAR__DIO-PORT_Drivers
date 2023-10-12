@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>5</fileVersion>
+    <fileChecksum>325196417</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\cstartup_M.c</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Dio_Cfg.h</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Port_PBcfg.c</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Det.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$TOOLKIT_DIR$\config\generic_cortex.icf</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Platform_Types.h</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Port.c</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Port_Regs.h</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Dio_PBcfg.c</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Compiler.h</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Det.c</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Dio.c</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Port.h</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Port_Cfg.h</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Dio.h</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Std_Types.h</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Common_Macros.h</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Dio_Regs.h</file>
+            <file>$PROJ_DIR$\Debug\List\DIO-PORT_Drivers.map</file>
+            <file>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\tm4c123gh6pm_registers.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\cstartup_M.o</file>
+            <file>$PROJ_DIR$\Debug\Exe\DIO-PORT_Drivers.out</file>
+            <file>$PROJ_DIR$\Debug\Obj\Dio.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\Port_PBcfg.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\Dio_PBcfg.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\Port.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\Det.o</file>
+        </outputs>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 25</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\cstartup_M.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 26</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Port_PBcfg.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 16 21 20 8 13 17</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Port.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 31</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 16 21 20 8 13 17 24 11 5</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Dio_PBcfg.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 30</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 18 20 8 13 3 21</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Det.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 5 20 8 13</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\AUTOSAR\AUTOSAR_Project\Dio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 28</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 18 20 8 13 3 21 22 5</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 27 23</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\DIO-PORT_Drivers.out</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 23</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 7 26 32 28 30 25 31 29 10 1 19 6</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

@@ -1,0 +1,178 @@
+###############################################################################
+#
+# IAR ELF Linker V9.30.1.335/W64 for ARM                  11/Oct/2023  19:09:42
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =  D:\DIO_PORT\Debug\Exe\DIO-PORT_Drivers.out
+#    Map file     =  D:\DIO_PORT\Debug\List\DIO-PORT_Drivers.map
+#    Command line =
+#        -f D:\DIO_PORT\Debug\Exe\DIO-PORT_Drivers.out.rsp
+#        (D:\DIO_PORT\Debug\Obj\cstartup_M.o D:\DIO_PORT\Debug\Obj\Det.o
+#        D:\DIO_PORT\Debug\Obj\Dio.o D:\DIO_PORT\Debug\Obj\Dio_PBcfg.o
+#        D:\DIO_PORT\Debug\Obj\main.o D:\DIO_PORT\Debug\Obj\Port.o
+#        D:\DIO_PORT\Debug\Obj\Port_PBcfg.o --no_out_extension -o
+#        D:\DIO_PORT\Debug\Exe\DIO-PORT_Drivers.out --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        D:\DIO_PORT\Debug\List\DIO-PORT_Drivers.map --config "C:\Program
+#        Files\IAR Systems\Embedded Workbench
+#        9.1\arm\config\generic_cortex.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale --cpu=Cortex-M3
+#        --fpu=None)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x7'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block PROC_STACK with size = 0, alignment = 8 { };
+define block HEAP with size = 2K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'ffff] {
+          rw, block CSTACK, block PROC_STACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind         Address   Size  Object
+  -------   ----         -------   ----  ------
+"A0":                              0x40
+  .intvec   const            0x0   0x40  cstartup_M.o [1]
+                          - 0x40   0x40
+
+"P1":                              0x6a
+  .text     ro code         0x40   0x1e  cmain.o [3]
+  .text     ro code         0x5e    0x4  low_level_init.o [2]
+  .text     ro code         0x62    0x4  main.o [1]
+  .text     ro code         0x66    0x4  exit.o [2]
+  .text     ro code         0x6a    0x2  cstartup_M.o [1]
+  .text     ro code         0x6c    0xa  cexit.o [3]
+  .text     ro code         0x76    0x2  cstartup_M.o [1]
+  .text     ro code         0x78   0x14  exit.o [4]
+  .text     ro code         0x8c   0x10  cstartup_M.o [1]
+  .text     ro code         0x9c    0x2  cstartup_M.o [1]
+  .text     ro code         0x9e    0x2  cstartup_M.o [1]
+  .text     ro code         0xa0    0x2  cstartup_M.o [1]
+  .text     ro code         0xa2    0x2  cstartup_M.o [1]
+  .text     ro code         0xa4    0x2  cstartup_M.o [1]
+  .text     ro code         0xa6    0x2  cstartup_M.o [1]
+  .text     ro code         0xa8    0x2  cstartup_M.o [1]
+                          - 0xaa   0x6a
+
+"P2":                             0x400
+  CSTACK             0x2000'0000  0x400  <Block>
+    CSTACK  uninit   0x2000'0000  0x400  <Block tail>
+                   - 0x2000'0400  0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+         0xaa     0x7'ffff  0x7'ff56
+  0x2000'0400  0x2000'ffff    0xfc00
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+D:\DIO_PORT\Debug\Obj: [1]
+    cstartup_M.o           34       64
+    main.o                  4
+    -------------------------------------------
+    Total:                 38       64
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+rt7M_tl.a: [3]
+    cexit.o                10
+    cmain.o                30
+    -------------------------------------------
+    Total:                 40
+
+shb_l.a: [4]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Linker created                        1'024
+-----------------------------------------------
+    Grand Total:          106       64    1'024
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                     Address  Size  Type      Object
+-----                     -------  ----  ----      ------
+?main                        0x41        Code  Gb  cmain.o [3]
+BusFault_Handler             0x9f   0x2  Code  Wk  cstartup_M.o [1]
+CSTACK$$Base          0x2000'0000         --   Gb  - Linker created -
+CSTACK$$Limit         0x2000'0400         --   Gb  - Linker created -
+DebugMon_Handler             0xa5   0x2  Code  Wk  cstartup_M.o [1]
+HardFault_Handler            0x77   0x2  Code  Wk  cstartup_M.o [1]
+MemManage_Handler            0x9d   0x2  Code  Wk  cstartup_M.o [1]
+NMI_Handler                  0x6b   0x2  Code  Wk  cstartup_M.o [1]
+PendSV_Handler               0xa7   0x2  Code  Wk  cstartup_M.o [1]
+Region$$Table$$Base           0x0         --   Gb  - Linker created -
+Region$$Table$$Limit          0x0         --   Gb  - Linker created -
+SVC_Handler                  0xa3   0x2  Code  Wk  cstartup_M.o [1]
+SysTick_Handler              0xa9   0x2  Code  Wk  cstartup_M.o [1]
+UsageFault_Handler           0xa1   0x2  Code  Wk  cstartup_M.o [1]
+__cmain                      0x41        Code  Gb  cmain.o [3]
+__exit                       0x79  0x14  Code  Gb  exit.o [4]
+__iar_program_start          0x8d  0x10  Code  Gb  cstartup_M.o [1]
+__low_level_init             0x5f   0x4  Code  Gb  low_level_init.o [2]
+__vector_table                0x0  0x40  Data  Gb  cstartup_M.o [1]
+_call_main                   0x4d        Code  Gb  cmain.o [3]
+_exit                        0x6d        Code  Gb  cexit.o [3]
+exit                         0x67   0x4  Code  Gb  exit.o [2]
+main                         0x63   0x4  Code  Gb  main.o [1]
+
+
+[1] = D:\DIO_PORT\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+    106 bytes of readonly  code memory
+     64 bytes of readonly  data memory
+  1'024 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

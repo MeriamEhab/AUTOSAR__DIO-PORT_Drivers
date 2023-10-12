@@ -1,0 +1,110 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\AUTOSAR\AUTOSAR_Project\cstartup_M.c -xcl_file D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.xcl -macro_file D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\AUTOSAR\AUTOSAR_Project\cstartup_M.c -o D$:\DIO_PORT\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.tmp
+  rspfile_name = D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.xcl.rsp
+
+build D$:\DIO_PORT\Debug\BrowseInfo\Det.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\AUTOSAR\AUTOSAR_Project\Det.c -xcl_file D$:\DIO_PORT\Debug\BrowseInfo\Det.xcl -macro_file D$:\DIO_PORT\Debug\BrowseInfo\Det.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\AUTOSAR\AUTOSAR_Project\Det.c -o D$:\DIO_PORT\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros D$:\DIO_PORT\Debug\BrowseInfo\Det.tmp
+  rspfile_name = D$:\DIO_PORT\Debug\BrowseInfo\Det.xcl.rsp
+
+build D$:\DIO_PORT\Debug\BrowseInfo\Dio.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\AUTOSAR\AUTOSAR_Project\Dio.c -xcl_file D$:\DIO_PORT\Debug\BrowseInfo\Dio.xcl -macro_file D$:\DIO_PORT\Debug\BrowseInfo\Dio.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\AUTOSAR\AUTOSAR_Project\Dio.c -o D$:\DIO_PORT\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros D$:\DIO_PORT\Debug\BrowseInfo\Dio.tmp
+  rspfile_name = D$:\DIO_PORT\Debug\BrowseInfo\Dio.xcl.rsp
+
+build D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\AUTOSAR\AUTOSAR_Project\Dio_PBcfg.c -xcl_file D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.xcl -macro_file D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\AUTOSAR\AUTOSAR_Project\Dio_PBcfg.c -o D$:\DIO_PORT\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.tmp
+  rspfile_name = D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.xcl.rsp
+
+build D$:\DIO_PORT\Debug\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\DIO_PORT\main.c -xcl_file D$:\DIO_PORT\Debug\BrowseInfo\main.xcl -macro_file D$:\DIO_PORT\Debug\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\DIO_PORT\main.c -o D$:\DIO_PORT\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros D$:\DIO_PORT\Debug\BrowseInfo\main.tmp
+  rspfile_name = D$:\DIO_PORT\Debug\BrowseInfo\main.xcl.rsp
+
+build D$:\DIO_PORT\Debug\BrowseInfo\Port.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\AUTOSAR\AUTOSAR_Project\Port.c -xcl_file D$:\DIO_PORT\Debug\BrowseInfo\Port.xcl -macro_file D$:\DIO_PORT\Debug\BrowseInfo\Port.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\AUTOSAR\AUTOSAR_Project\Port.c -o D$:\DIO_PORT\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros D$:\DIO_PORT\Debug\BrowseInfo\Port.tmp
+  rspfile_name = D$:\DIO_PORT\Debug\BrowseInfo\Port.xcl.rsp
+
+build D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.xcl : COMPILER_XCL 
+  xclcommand = -source_file D$:\AUTOSAR\AUTOSAR_Project\Port_PBcfg.c -xcl_file D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.xcl -macro_file D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = D$:\AUTOSAR\AUTOSAR_Project\Port_PBcfg.c -o D$:\DIO_PORT\Debug\Obj\ --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -Ol --predef_macros D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.tmp
+  rspfile_name = D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.xcl.rsp
+
+build D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.pbi : INDEXER D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.xcl |  $
+D$:\AUTOSAR\AUTOSAR_Project\cstartup_M.c
+  flags = -out=D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.pbi -f D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.xcl
+
+build D$:\DIO_PORT\Debug\BrowseInfo\Det.pbi : INDEXER D$:\DIO_PORT\Debug\BrowseInfo\Det.xcl |  $
+D$:\AUTOSAR\AUTOSAR_Project\Det.c
+  flags = -out=D$:\DIO_PORT\Debug\BrowseInfo\Det.pbi -f D$:\DIO_PORT\Debug\BrowseInfo\Det.xcl
+
+build D$:\DIO_PORT\Debug\BrowseInfo\Dio.pbi : INDEXER D$:\DIO_PORT\Debug\BrowseInfo\Dio.xcl |  $
+D$:\AUTOSAR\AUTOSAR_Project\Dio.c
+  flags = -out=D$:\DIO_PORT\Debug\BrowseInfo\Dio.pbi -f D$:\DIO_PORT\Debug\BrowseInfo\Dio.xcl
+
+build D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.pbi : INDEXER D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.xcl |  $
+D$:\AUTOSAR\AUTOSAR_Project\Dio_PBcfg.c
+  flags = -out=D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.pbi -f D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.xcl
+
+build D$:\DIO_PORT\Debug\BrowseInfo\main.pbi : INDEXER D$:\DIO_PORT\Debug\BrowseInfo\main.xcl |  $
+D$:\DIO_PORT\main.c
+  flags = -out=D$:\DIO_PORT\Debug\BrowseInfo\main.pbi -f D$:\DIO_PORT\Debug\BrowseInfo\main.xcl
+
+build D$:\DIO_PORT\Debug\BrowseInfo\Port.pbi : INDEXER D$:\DIO_PORT\Debug\BrowseInfo\Port.xcl |  $
+D$:\AUTOSAR\AUTOSAR_Project\Port.c
+  flags = -out=D$:\DIO_PORT\Debug\BrowseInfo\Port.pbi -f D$:\DIO_PORT\Debug\BrowseInfo\Port.xcl
+
+build D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.pbi : INDEXER D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.xcl |  $
+D$:\AUTOSAR\AUTOSAR_Project\Port_PBcfg.c
+  flags = -out=D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.pbi -f D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.xcl
+
+build D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers.pbw : MAKEBROWSE D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers.pbd
+  flags = D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers.pbd -output D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers.pbw
+
+build D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part0.pbi : PDBLINK D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.pbi |  $
+D$:\DIO_PORT\Debug\BrowseInfo\Det.pbi $
+D$:\DIO_PORT\Debug\BrowseInfo\Dio.pbi
+  flags = -M D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part0.pbi D$:\DIO_PORT\Debug\BrowseInfo\cstartup_M.pbi D$:\DIO_PORT\Debug\BrowseInfo\Det.pbi D$:\DIO_PORT\Debug\BrowseInfo\Dio.pbi
+
+build D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part1.pbi : PDBLINK D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.pbi |  $
+D$:\DIO_PORT\Debug\BrowseInfo\main.pbi $
+D$:\DIO_PORT\Debug\BrowseInfo\Port.pbi
+  flags = -M D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part1.pbi D$:\DIO_PORT\Debug\BrowseInfo\Dio_PBcfg.pbi D$:\DIO_PORT\Debug\BrowseInfo\main.pbi D$:\DIO_PORT\Debug\BrowseInfo\Port.pbi
+
+build D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part2.pbi : PDBLINK D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.pbi
+  flags = -M D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part2.pbi D$:\DIO_PORT\Debug\BrowseInfo\Port_PBcfg.pbi
+
+build D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers.pbd : PDBLINK D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part0.pbi |  $
+D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part1.pbi $
+D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part2.pbi
+  flags = -M D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers.pbd D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part0.pbi D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part1.pbi D$:\DIO_PORT\Debug\BrowseInfo\DIO-PORT_Drivers_part2.pbi
+
